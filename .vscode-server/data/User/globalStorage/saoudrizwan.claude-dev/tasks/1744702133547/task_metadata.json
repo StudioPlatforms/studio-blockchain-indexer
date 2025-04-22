@@ -1,0 +1,52 @@
+{
+  "files_in_context": [
+    {
+      "path": "mainnet-indexer/README-VERIFICATION-IMPROVEMENTS.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744702143407,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744702158527,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/import-handler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744702162914,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/contracts-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744702170222,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/docker-compose.yml",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744702174536,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    }
+  ],
+  "model_usage": [
+    {
+      "ts": 1744702134244,
+      "model_id": "claude-3-7-sonnet-20250219",
+      "model_provider_id": "anthropic",
+      "mode": "plan"
+    }
+  ]
+}

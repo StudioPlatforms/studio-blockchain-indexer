@@ -1,0 +1,38 @@
+FROM ubuntu:22.04
+
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    curl \
+    postgresql-client \
+    docker.io \
+    cron \
+    gzip \
+    findutils \
+    grep \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create directories
+RUN mkdir -p /var/log /var/backups/indexer
+
+# Copy the monitor script
+COPY enhanced-monitor.sh /app/enhanced-monitor.sh
+RUN chmod +x /app/enhanced-monitor.sh
+
+# Set environment variables
+ENV INDEXER_HOST=indexer \
+    INDEXER_PORT=3000 \
+    DB_HOST=postgres \
+    DB_PORT=5432 \
+    DB_NAME=studio_indexer \
+    DB_USER=postgres \
+    DB_PASSWORD=postgres \
+    CHECK_INTERVAL=60 \
+    LOG_FILE=/var/log/enhanced-monitor.log \
+    BACKUP_DIR=/var/backups/indexer \
+    DOCKER_COMPOSE_FILE=/root/mainnet-indexer/docker-compose.yml
+
+# Set working directory
+WORKDIR /app
+
+# Run the monitor script
+CMD ["/app/enhanced-monitor.sh"]

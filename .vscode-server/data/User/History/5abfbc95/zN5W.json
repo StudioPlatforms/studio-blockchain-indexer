@@ -1,0 +1,69 @@
+{
+    "search.exclude": {
+        "**/*.code-search": false,
+        "**/bower_components": false,
+        "**/node_modules": false
+    },
+    "editor.foldingMaximumRegions": 7000,
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "solidity.compileUsingRemoteVersion": "v0.8.0+commit.c7dfd78e",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "editor.accessibilitySupport": "off",
+    "remote.SSH.remotePlatform": {
+        "141.98.155.107": "linux",
+        "157.173.193.124": "linux",
+        "89.250.72.162": "linux",
+        "217.77.13.45": "linux",
+        "173.249.16.253": "linux",
+        "173.212.237.2": "linux",
+        "161.97.171.210": "linux",
+        "167.86.95.117": "linux",
+        "62.171.162.49": "linux",
+        "144.91.110.23": "linux"
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "bash (2)": {
+            "path": "/usr/bin/bash"
+        }
+    },
+    "roo-cline.allowedCommands": [
+        "npm test",
+        "npm install",
+        "tsc",
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "terminal.explorerKind": "both",
+    "terminal.integrated.defaultProfile.osx": "",
+    
+    // ✅ Added configurations for Cline and terminal shell integration
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.env.linux": {
+        "TERM_PROGRAM": "vscode"
+    }
+}

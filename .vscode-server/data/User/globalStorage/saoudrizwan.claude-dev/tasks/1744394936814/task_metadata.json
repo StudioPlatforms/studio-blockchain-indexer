@@ -1,0 +1,164 @@
+{
+  "files_in_context": [
+    {
+      "path": "mainnet-indexer/src/services/api/stats.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744394945798,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/utils.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744394965961,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/database/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744394981174,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/database/blockchain.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744394988285,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/stats.ts",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744395059111,
+      "cline_edit_date": 1744395059111,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/stats.ts",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744395140281,
+      "cline_edit_date": 1744395140281,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/database/types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395147223,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/stats.ts",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744395265465,
+      "cline_edit_date": 1744395265465,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/docker-compose.yml",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395304277,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395434776,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395439959,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395445675,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/Dockerfile",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395507678,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/database/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744395714295,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/stats.ts",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744395763914,
+      "cline_edit_date": 1744395763914,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/contracts-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744396778781,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744396785894,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/import-handler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744396792588,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/README-LARGE-CONTRACT-VERIFICATION.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744397405008,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    }
+  ],
+  "model_usage": [
+    {
+      "ts": 1744394937289,
+      "model_id": "claude-3-7-sonnet-20250219",
+      "model_provider_id": "anthropic",
+      "mode": "act"
+    }
+  ]
+}

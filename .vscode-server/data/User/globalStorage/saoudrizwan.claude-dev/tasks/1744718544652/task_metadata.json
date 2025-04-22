@@ -1,0 +1,564 @@
+{
+  "files_in_context": [
+    {
+      "path": "/root/mainnet-indexer/README.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718558443,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/package.json",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718563943,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718568951,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/config.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718573642,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/indexer.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718578170,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718585911,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718591338,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/tokens.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718599081,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718607088,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718615125,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718619764,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718626149,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/blockchain.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718633297,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/tokens.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718641905,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/nfts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718650710,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/contracts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718657732,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718666902,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/001_initial_schema.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718673947,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/001_nft_schema.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718678861,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/002_token_transfers.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718686832,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/003_token_balances.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718691397,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/005_contracts.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718695911,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/009_contract_verification.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718701089,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/012_multi_file_contracts.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718707537,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/004_event_logs.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719835454,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/enhanced-verification.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719839870,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/enhanced-import-handler.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719846765,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/API_ENDPOINTS.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719853100,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/NFT_ENDPOINTS.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719860173,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/DEPLOYMENT.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719865633,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/MAINNET_DEPLOYMENT.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719870655,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/FRONTEND_INTEGRATION.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719876145,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/MONITORING.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719881574,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/SECURITY_MEASURES.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719888480,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/MASTER_PLAN.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719894265,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/QUICK_DEPLOY.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719900016,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/API_GUIDE.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719904504,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/FAILSAFE.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719912090,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/docker-compose.yml",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719917840,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/Dockerfile",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719922363,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/scripts/Dockerfile.enhanced-monitor-fixed",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719926666,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/scripts/enhanced-monitor-fixed.sh",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719930975,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/stats.js",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744719936767,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720307171,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/blockchain.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720316502,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/tokens.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720324163,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/nfts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720332526,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/contracts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720339663,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/enhanced-contracts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720347977,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/logs.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720354579,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720363952,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720374814,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/decoder.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720380943,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/tokens.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720388730,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/abis.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720397931,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/verification-api.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744720405281,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/verification-service.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729705008,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/verification-compiler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729715838,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/compiler-manager.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729721821,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/enhanced-import-handler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729728569,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/flattener.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729735078,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/verification-types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729741410,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/enhanced-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729786992,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729793554,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/enhanced-contracts-verification.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744729916034,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/contracts-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744730078600,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/verification-api.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744730087279,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/enhanced-contracts-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744730239452,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/verification-api.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744730244925,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    }
+  ],
+  "model_usage": [
+    {
+      "ts": 1744718545339,
+      "model_id": "claude-3-7-sonnet-20250219",
+      "model_provider_id": "anthropic",
+      "mode": "act"
+    }
+  ]
+}

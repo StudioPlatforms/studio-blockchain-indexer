@@ -1,0 +1,740 @@
+{
+  "files_in_context": [
+    {
+      "path": "/root/mainnet-indexer/package.json",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357885847,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357892158,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/config.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357899244,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/indexer.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357905798,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357917354,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/core.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357924740,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/tokens.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357934300,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357946035,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357953987,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357959032,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357966993,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/blockchain.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357977887,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/tokens.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357987396,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/nfts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744357996122,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/contracts.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358003513,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358014444,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/001_initial_schema.sql",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358024521,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/002_token_transfers.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358032912,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/003_token_balances.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358039446,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/004_event_logs.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358046294,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/005_contracts.sql",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358051827,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/009_contract_verification.sql",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358058352,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/010_add_evm_version.sql",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358064957,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/001_nft_schema.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358070532,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/README.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358079172,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/API_GUIDE.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358088060,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/NFT_ENDPOINTS.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358097899,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/DEPLOYMENT.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358106972,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/docker-compose.yml",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358115475,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/Dockerfile",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358123661,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/scripts/monitor-indexer.sh",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358134547,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/scripts/enhanced-monitor.sh",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358144402,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/SECURITY_MEASURES.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358156167,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/MASTER_PLAN.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358165499,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/MAINNET_DEPLOYMENT.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358177651,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/QUICK_DEPLOY.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358189208,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/FRONTEND_INTEGRATION.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358198322,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/README-CONTRACT-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744358211231,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744359892261,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/import-handler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744359898660,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/contracts-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744359904223,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/contracts.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744359910200,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/contracts.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744359916751,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/DEPLOYMENT_SUMMARY.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360255795,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/v3-core/UniswapV3Factory.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360295979,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/wsto/WETH9.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360302230,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/v3-periphery/SwapRouter.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360308103,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/v3-periphery/libraries/NFTDescriptor.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360314671,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/v3-periphery/NonfungibleTokenPositionDescriptor.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360321357,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap_extracted/uniswap_contracts/v3-periphery/NonfungiblePositionManager.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744360327647,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/contracts/UniswapV3Factory.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361568140,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361575973,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/contracts/UniswapV3PoolDeployer.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361582770,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/contracts/NoDelegateCall.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361588402,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/contracts/UniswapV3Pool.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361593823,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/contracts/interfaces/IUniswapV3PoolDeployer.sol",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361601302,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/README-CONTRACT-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361635710,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/API_ENDPOINTS.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744361641014,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/contracts/sources.json",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744361786415,
+      "cline_edit_date": 1744361786415,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/contracts/sources.json",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744362141448,
+      "cline_edit_date": 1744362141448,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/contracts/sources.json",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744362242040,
+      "cline_edit_date": 1744362242040,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/UniswapV3Factory.sol",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744362351445,
+      "cline_edit_date": 1744362351445,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/test-contract-verification.js",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744362755615,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/test-contract-verification-details.js",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744362760563,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/verify-factory.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744362780844,
+      "cline_edit_date": 1744362780844,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/package.json",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744362919899,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap/v3-core/hardhat.config.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744362925345,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/README-CONTRACT-VERIFICATION.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744363015906,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/verification/index.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744363173806,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/api/contracts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744363180194,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744363187221,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/blockchain/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744363211268,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/get-bytecode.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744363238518,
+      "cline_edit_date": 1744363238518,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/get-bytecode-api.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744363483401,
+      "cline_edit_date": 1744363483401,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/verify-direct.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744363634298,
+      "cline_edit_date": 1744363634298,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/analyze-indexer.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744363776704,
+      "cline_edit_date": 1744363776704,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer-summary.md",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744363922845,
+      "cline_edit_date": 1744363922845,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/analyze-database-schema.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744363950733,
+      "cline_edit_date": 1744363950733,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364537696,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/contracts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364543179,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/src/services/database/core.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364548669,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/009_contract_verification.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364563313,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/001_initial_schema.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364609106,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/005_contracts.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364635403,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer/migrations/010_add_evm_version.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744364660191,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer-database-schema.md",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744364730287,
+      "cline_edit_date": 1744364730287,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/contract-verification-process.md",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744364788320,
+      "cline_edit_date": 1744364788320,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/mainnet-indexer-final-summary.md",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744364870367,
+      "cline_edit_date": 1744364870367,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/uniswap-verification-recommendations.md",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744365055438,
+      "cline_edit_date": 1744365055438,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/README.md",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744365078988,
+      "cline_edit_date": 1744365078988,
+      "user_edit_date": null
+    },
+    {
+      "path": "/root/verify-uniswap/verify-with-original-source.js",
+      "record_state": "active",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744365171628,
+      "cline_edit_date": 1744365171628,
+      "user_edit_date": null
+    }
+  ],
+  "model_usage": [
+    {
+      "ts": 1744357868359,
+      "model_id": "claude-3-7-sonnet-20250219",
+      "model_provider_id": "anthropic",
+      "mode": "act"
+    }
+  ]
+}

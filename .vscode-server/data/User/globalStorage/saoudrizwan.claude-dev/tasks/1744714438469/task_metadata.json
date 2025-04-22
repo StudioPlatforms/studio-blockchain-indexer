@@ -1,0 +1,220 @@
+{
+  "files_in_context": [
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714452423,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/MULTI-FILE-VERIFICATION-GUIDE.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714457134,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/migrations/012_multi_file_contracts.sql",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714462889,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/enhanced-verification.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714467868,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/enhanced-import-handler.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714473570,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/enhanced-contracts-verification.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714480245,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/database/enhanced-contracts.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714486896,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/database/types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714492040,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/verification-types.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714497110,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/flattener.ts",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714502577,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/compiler-manager.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714508828,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/verification-service.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714516980,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/verification-compiler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714522640,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/verification-api.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714528208,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714688490,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/MULTI-FILE-VERIFICATION-GUIDE.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714694073,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "read_tool",
+      "cline_read_date": 1744714739197,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744714855932,
+      "cline_edit_date": 1744714855932,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "cline_edited",
+      "cline_read_date": 1744716119579,
+      "cline_edit_date": 1744716119579,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "stale",
+      "record_source": "user_edited",
+      "cline_read_date": 1744716119579,
+      "cline_edit_date": 1744716119579,
+      "user_edit_date": 1744717775968
+    },
+    {
+      "path": "mainnet-indexer/README-ENHANCED-VERIFICATION.md",
+      "record_state": "active",
+      "record_source": "user_edited",
+      "cline_read_date": 1744716119579,
+      "cline_edit_date": 1744716119579,
+      "user_edit_date": 1744718045786
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/enhanced-import-handler.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718064785,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/flattener.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718072080,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/verification/enhanced-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718077882,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/src/services/api/enhanced-contracts-verification.ts",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718085149,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    },
+    {
+      "path": "mainnet-indexer/MULTI-FILE-VERIFICATION-GUIDE.md",
+      "record_state": "active",
+      "record_source": "read_tool",
+      "cline_read_date": 1744718092613,
+      "cline_edit_date": null,
+      "user_edit_date": null
+    }
+  ],
+  "model_usage": [
+    {
+      "ts": 1744714439102,
+      "model_id": "claude-3-7-sonnet-20250219",
+      "model_provider_id": "anthropic",
+      "mode": "act"
+    }
+  ]
+}

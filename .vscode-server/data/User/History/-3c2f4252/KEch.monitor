@@ -1,0 +1,33 @@
+FROM ubuntu:22.04
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y bash curl postgresql-client && \
+    rm -rf /var/lib/apt/lists/*
+
+# Create app directory
+WORKDIR /app
+
+# Copy the monitoring script
+COPY scripts/monitor-indexer.sh /app/monitor-indexer.sh
+
+# Make the script executable
+RUN chmod +x /app/monitor-indexer.sh
+
+# Create log directory
+RUN mkdir -p /var/log
+
+# Set environment variables
+ENV INDEXER_HOST=indexer
+ENV INDEXER_PORT=3000
+ENV DB_HOST=postgres
+ENV DB_PORT=5432
+ENV DB_NAME=studio_indexer
+ENV DB_USER=postgres
+ENV DB_PASSWORD=postgres
+ENV CHECK_INTERVAL=60
+ENV LOG_FILE=/var/log/indexer-monitor.log
+ENV SLACK_WEBHOOK_URL=""
+
+# Set the entrypoint to the monitoring script
+ENTRYPOINT ["/app/monitor-indexer.sh"]

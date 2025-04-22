@@ -1,0 +1,14 @@
+[Unit]
+Description=Honeypot Database Monitor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/mainnet-indexer/scripts/restore-honeypot.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

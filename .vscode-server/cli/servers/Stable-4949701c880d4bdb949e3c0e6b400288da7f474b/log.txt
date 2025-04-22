@@ -1,0 +1,44 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to /tmp/code-5bc051d2-fae6-4969-b7d4-2ea68bda4196
+Extension host agent listening on /tmp/code-5bc051d2-fae6-4969-b7d4-2ea68bda4196
+
+[15:50:49] 
+
+
+
+
+[15:50:49] Extension host agent started.
+[15:50:50] [<unknown>][a9e7684c][ManagementConnection] New connection established.
+[15:50:50] [<unknown>][2b36e590][ExtensionHostConnection] New connection established.
+[15:50:50] [<unknown>][2b36e590][ExtensionHostConnection] <3878452> Launched Extension Host Process.
+[15:50:54] Getting Manifest... saoudrizwan.claude-dev
+[15:50:54] Installing extension: saoudrizwan.claude-dev {
+  productVersion: { version: '1.99.3', date: '2025-04-15T23:16:36.374Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'win32-x64' },
+  profileLocation: gr {
+    scheme: 'file',
+    authority: '',
+    path: '/root/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///root/.vscode-server/extensions/extensions.json',
+    _fsPath: '/root/.vscode-server/extensions/extensions.json'
+  }
+}
+[15:50:58] Extension signature verification result for saoudrizwan.claude-dev: Success. Internal Code: 0. Executed: true. Duration: 3287ms.
+[15:51:00] Extracted extension to file:///root/.vscode-server/extensions/saoudrizwan.claude-dev-3.13.1: saoudrizwan.claude-dev
+[15:51:00] Renamed to /root/.vscode-server/extensions/saoudrizwan.claude-dev-3.13.1
+[15:51:00] Marked extension as removed saoudrizwan.claude-dev-3.12.3
+[15:51:00] Extension installed successfully: saoudrizwan.claude-dev file:///root/.vscode-server/extensions/extensions.json
+New EH opened, aborting shutdown
+[15:55:49] New EH opened, aborting shutdown

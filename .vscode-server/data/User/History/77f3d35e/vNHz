@@ -1,0 +1,8 @@
+RPC_URL=https://mainnet.studio-blockchain.com
+CHAIN_ID=240241
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=studio_indexer
+DB_USER=postgres
+DB_PASSWORD=postgres
+API_PORT=3000

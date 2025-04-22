@@ -1,0 +1,298 @@
+const fs = require('fs');
+const path = require('path');
+const axios = require('axios');
+
+// Indexer API URL
+const INDEXER_API_URL = 'http://localhost:3000';
+
+// Paths
+const contractsDir = path.join(__dirname, '../contracts');
+const payloadsDir = path.join(__dirname, '../verification-payloads');
+
+/**
+ * Read a verification payload
+ * @param {string} contractName The name of the contract
+ * @returns {object} The verification payload
+ */
+function readVerificationPayload(contractName) {
+  const payloadPath = path.join(payloadsDir, `${contractName}.json`);
+  return JSON.parse(fs.readFileSync(payloadPath, 'utf8'));
+}
+
+/**
+ * Extract import paths from a file
+ * @param {string} content The file content
+ * @returns {string[]} The import paths
+ */
+function extractImports(content) {
+  const imports = [];
+  const importRegex = /import\s+['"]([^'"]+)['"]/g;
+  let match;
+  
+  while ((match = importRegex.exec(content)) !== null) {
+    imports.push(match[1]);
+  }
+  
+  return imports;
+}
+
+/**
+ * Get all source files recursively
+ * @param {string} dir The directory to search
+ * @param {string} baseDir The base directory
+ * @param {object} result The result object
+ * @returns {object} The source files
+ */
+function getSourceFilesRecursive(dir, baseDir, result = {}) {
+  const files = fs.readdirSync(dir);
+  
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    
+    if (stat.isDirectory()) {
+      // Recursively process subdirectories
+      getSourceFilesRecursive(filePath, baseDir, result);
+    } else if (file.endsWith('.sol')) {
+      // Get the relative path from the base directory
+      const relativePath = path.relative(baseDir, filePath);
+      // Use forward slashes for consistency
+      const normalizedPath = relativePath.replace(/\\/g, '/');
+      // Read the file content
+      const content = fs.readFileSync(filePath, 'utf8');
+      // Add to result
+      result[normalizedPath] = content;
+    }
+  }
+  
+  return result;
+}
+
+/**
+ * Create a sourceFiles object with the exact paths as in the import statements
+ * @param {object} sourceFiles The source files
+ * @returns {object} The sourceFiles object with exact paths
+ */
+function createSourceFilesWithExactPaths(sourceFiles) {
+  const exactPathSourceFiles = {};
+  
+  // First, add all files with their original paths
+  for (const [filePath, content] of Object.entries(sourceFiles)) {
+    exactPathSourceFiles[filePath] = content;
+  }
+  
+  // Then, add mappings for the import paths
+  for (const [filePath, content] of Object.entries(sourceFiles)) {
+    // Extract imports from the file
+    const imports = extractImports(content);
+    
+    // For each import, try to find the corresponding file
+    for (const importPath of imports) {
+      // Skip if already mapped
+      if (exactPathSourceFiles[importPath]) {
+        continue;
+      }
+      
+      // Try to find the file in the sourceFiles
+      let found = false;
+      
+      // Case 1: Direct match
+      if (sourceFiles[importPath]) {
+        exactPathSourceFiles[importPath] = sourceFiles[importPath];
+        found = true;
+        continue;
+      }
+      
+      // Case 2: Match by filename
+      const importFileName = path.basename(importPath);
+      for (const [sourceFilePath, sourceFileContent] of Object.entries(sourceFiles)) {
+        if (path.basename(sourceFilePath) === importFileName) {
+          exactPathSourceFiles[importPath] = sourceFileContent;
+          found = true;
+          break;
+        }
+      }
+      
+      // Case 3: For @uniswap/v3-core imports, map to the corresponding file
+      if (!found && importPath.startsWith('@uniswap/v3-core/')) {
+        const relativePath = importPath.replace('@uniswap/v3-core/contracts/', '');
+        for (const [sourceFilePath, sourceFileContent] of Object.entries(sourceFiles)) {
+          if (sourceFilePath.endsWith(relativePath)) {
+            exactPathSourceFiles[importPath] = sourceFileContent;
+            found = true;
+            break;
+          }
+        }
+      }
+      
+      // Case 4: For relative imports, try to resolve the path
+      if (!found && (importPath.startsWith('./') || importPath.startsWith('../'))) {
+        const importDir = path.dirname(filePath);
+        const resolvedPath = path.normalize(path.join(importDir, importPath));
+        const normalizedPath = resolvedPath.replace(/\\/g, '/');
+        
+        if (sourceFiles[normalizedPath]) {
+          exactPathSourceFiles[importPath] = sourceFiles[normalizedPath];
+          found = true;
+        }
+      }
+      
+      // Case 5: For imports without a path prefix, try to find in the same directory
+      if (!found && !importPath.includes('/')) {
+        const importDir = path.dirname(filePath);
+        const resolvedPath = path.normalize(path.join(importDir, importPath));
+        const normalizedPath = resolvedPath.replace(/\\/g, '/');
+        
+        if (sourceFiles[normalizedPath]) {
+          exactPathSourceFiles[importPath] = sourceFiles[normalizedPath];
+          found = true;
+        }
+      }
+      
+      // Case 6: For imports with a relative path, try to find in the contracts directory
+      if (!found) {
+        // Try to find the file in the contracts directory
+        for (const [sourceFilePath, sourceFileContent] of Object.entries(sourceFiles)) {
+          if (sourceFilePath.endsWith(importPath) || importPath.endsWith(sourceFilePath)) {
+            exactPathSourceFiles[importPath] = sourceFileContent;
+            found = true;
+            break;
+          }
+        }
+      }
+      
+      if (!found) {
+        console.warn(`Could not find mapping for import: ${importPath} in file: ${filePath}`);
+      }
+    }
+  }
+  
+  // Special case for SwapRouter.sol imports
+  const swapRouterImports = [
+    '@uniswap/v3-core/contracts/libraries/SafeCast.sol',
+    '@uniswap/v3-core/contracts/libraries/TickMath.sol',
+    '@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol',
+    'interfaces/ISwapRouter.sol',
+    'base/PeripheryImmutableState.sol',
+    'base/PeripheryValidation.sol',
+    'base/PeripheryPaymentsWithFee.sol',
+    'base/Multicall.sol',
+    'base/SelfPermit.sol',
+    'libraries/Path.sol',
+    'libraries/PoolAddress.sol',
+    'libraries/CallbackValidation.sol',
+    'interfaces/external/IWETH9.sol'
+  ];
+  
+  for (const importPath of swapRouterImports) {
+    if (!exactPathSourceFiles[importPath]) {
+      // Try to find the file by its basename
+      const importFileName = path.basename(importPath);
+      for (const [sourceFilePath, sourceFileContent] of Object.entries(sourceFiles)) {
+        if (path.basename(sourceFilePath) === importFileName) {
+          exactPathSourceFiles[importPath] = sourceFileContent;
+          console.log(`Mapped ${importPath} to ${sourceFilePath}`);
+          break;
+        }
+      }
+    }
+  }
+  
+  return exactPathSourceFiles;
+}
+
+/**
+ * Verify a contract using multi-part verification
+ * @param {string} contractName The name of the contract
+ */
+async function verifyContract(contractName) {
+  try {
+    console.log(`Verifying contract: ${contractName}`);
+    
+    // Read the verification payload
+    const payload = readVerificationPayload(contractName);
+    
+    // Get all source files recursively
+    const sourceFiles = getSourceFilesRecursive(contractsDir, contractsDir);
+    
+    console.log(`Found ${Object.keys(sourceFiles).length} source files`);
+    
+    // Create sourceFiles with exact paths
+    const exactPathSourceFiles = createSourceFilesWithExactPaths(sourceFiles);
+    
+    console.log(`Created ${Object.keys(exactPathSourceFiles).length} source files with exact paths`);
+    
+    // Create the verification request
+    const verificationRequest = {
+      address: payload.address,
+      contractName: payload.name,
+      compilerVersion: payload.compilerVersion,
+      optimizationUsed: payload.optimizationUsed,
+      runs: payload.runs,
+      evmVersion: payload.evmVersion,
+      constructorArguments: payload.constructorArguments,
+      libraries: payload.libraries,
+      isMultiPart: true,
+      sourceFiles: exactPathSourceFiles
+    };
+    
+    console.log(`Verification request for ${contractName}:`, JSON.stringify({
+      address: verificationRequest.address,
+      contractName: verificationRequest.contractName,
+      compilerVersion: verificationRequest.compilerVersion,
+      optimizationUsed: verificationRequest.optimizationUsed,
+      runs: verificationRequest.runs,
+      evmVersion: verificationRequest.evmVersion,
+      constructorArguments: verificationRequest.constructorArguments,
+      libraries: verificationRequest.libraries,
+      isMultiPart: verificationRequest.isMultiPart,
+      sourceFilesCount: Object.keys(verificationRequest.sourceFiles).length
+    }, null, 2));
+    
+    // Send the verification request
+    const response = await axios.post(`${INDEXER_API_URL}/contracts/verify`, verificationRequest, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    console.log(`Verification response for ${contractName}:`, JSON.stringify(response.data, null, 2));
+    
+    if (response.data.success) {
+      console.log(`✅ Contract ${contractName} verified successfully!`);
+    } else {
+      console.log(`❌ Failed to verify contract ${contractName}`);
+      console.log(`Error: ${JSON.stringify(response.data.error, null, 2)}`);
+    }
+    
+    return response.data;
+  } catch (error) {
+    console.error(`Error verifying contract ${contractName}:`, error.response?.data || error.message);
+    
+    // Log more details about the error
+    if (error.response) {
+      console.error('Response status:', error.response.status);
+      console.error('Response headers:', error.response.headers);
+      console.error('Response data:', error.response.data);
+    } else if (error.request) {
+      console.error('Request made but no response received');
+      console.error('Request:', error.request);
+    } else {
+      console.error('Error setting up request:', error.message);
+    }
+    
+    return {
+      success: false,
+      error: error.response?.data || error.message
+    };
+  }
+}
+
+// Verify the SwapRouter contract
+verifyContract('SwapRouter')
+  .then(() => {
+    console.log('Verification process completed!');
+  })
+  .catch(error => {
+    console.error('Error during verification process:', error);
+  });

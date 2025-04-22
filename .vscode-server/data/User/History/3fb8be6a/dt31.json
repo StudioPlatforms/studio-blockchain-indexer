@@ -1,0 +1,10 @@
+{
+  "address": "0x5D16d5b06bB052A91D74099A70D4048143a56406",
+  "name": "SwapRouter",
+  "compilerVersion": "0.7.6",
+  "optimizationUsed": true,
+  "runs": 200,
+  "evmVersion": "istanbul",
+  "constructorArguments": ["0000000000000000000000006f1af63eb91723a883c632e38d34f2cb6090b8050000000000000000000000005cca138772f7ec71adf95029291f87d26d0c0db0"],
+  "libraries": {}
+}

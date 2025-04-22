@@ -1,0 +1,252 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to /tmp/code-26c43923-2b88-4680-b83b-3112bbc4f7b2
+Extension host agent listening on /tmp/code-26c43923-2b88-4680-b83b-3112bbc4f7b2
+
+[14:43:59] 
+
+
+
+
+[14:43:59] Extension host agent started.
+[14:43:59] [<unknown>][6cc972a9][ManagementConnection] New connection established.
+[14:43:59] Deleted marked for removal extension from disk saoudrizwan.claude-dev /root/.vscode-server/extensions/saoudrizwan.claude-dev-3.8.5
+[14:43:59] Marked extension as removed saoudrizwan.claude-dev-3.8.5
+[14:43:59] [<unknown>][546fa0cf][ExtensionHostConnection] New connection established.
+[14:44:00] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017> Launched Extension Host Process.
+[14:44:04] Getting Manifest... saoudrizwan.claude-dev
+[14:44:05] Installing extension: saoudrizwan.claude-dev {
+  productVersion: { version: '1.99.1', date: '2025-04-04T15:58:59.624Z' },
+  pinned: false,
+  operation: 3,
+  isApplicationScoped: false,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'win32-x64' },
+  profileLocation: gr {
+    scheme: 'file',
+    authority: '',
+    path: '/root/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///root/.vscode-server/extensions/extensions.json',
+    _fsPath: '/root/.vscode-server/extensions/extensions.json'
+  }
+}
+[14:44:07] Extension signature verification result for saoudrizwan.claude-dev: Success. Internal Code: 0. Executed: true. Duration: 2032ms.
+[14:44:10] Extracted extension to file:///root/.vscode-server/extensions/saoudrizwan.claude-dev-3.11.0: saoudrizwan.claude-dev
+[14:44:10] Renamed to /root/.vscode-server/extensions/saoudrizwan.claude-dev-3.11.0
+[14:44:10] Marked extension as removed saoudrizwan.claude-dev-3.10.1
+[14:44:10] Extension installed successfully: saoudrizwan.claude-dev file:///root/.vscode-server/extensions/extensions.json
+New EH opened, aborting shutdown
+[14:48:59] New EH opened, aborting shutdown
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 
+<--- Last few GCs --->
+
+[4084017:0x6e655f0]  5914927 ms: Scavenge 1935.4 (1979.5) -> 1935.3 (1980.5) MB, 8.54 / 0.00 ms  (average mu = 0.233, current mu = 0.262) allocation failure; 
+[4084017:0x6e655f0]  5914941 ms: Scavenge 1941.1 (1985.3) -> 1939.6 (1989.3) MB, 9.17 / 0.00 ms  (average mu = 0.233, current mu = 0.262) allocation failure; 
+[4084017:0x6e655f0]  5914969 ms: Scavenge 1944.4 (1990.7) -> 1944.5 (1998.9) MB, 13.95 / 0.00 ms  (average mu = 0.233, current mu = 0.262) allocation failure; 
+
+
+<--- JS stacktrace --->
+
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  1: 0xb8d11b node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  2: 0xf01b70 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  3: 0xf01e57 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  4: 0x1113aa5  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  5: 0x1114034 v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  6: 0x112af24 v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::internal::GarbageCollectionReason, char const*) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  7: 0x112b73c v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  8: 0x112d89a v8::internal::Heap::HandleGCRequest() [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr>  9: 0x1098f07 v8::internal::StackGuard::HandleInterrupts() [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 10: 0x1251556 v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<true>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 11: 0x1255f49 v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<false>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 12: 0x12554d7 v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<false>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 13: 0x1256d36 v8::internal::JsonStringify(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 14: 0xf93c72 v8::internal::Builtin_JsonStringify(int, unsigned long*, v8::internal::Isolate*) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017><stderr> 15: 0x1975df6  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:22:35] [<unknown>][546fa0cf][ExtensionHostConnection] <4084017> Extension Host Process exited with code: null, signal: SIGABRT.
+Last EH closed, waiting before shutting down
+[16:22:35] Last EH closed, waiting before shutting down
+[16:22:48] [<unknown>][546fa0cf][ExtensionHostConnection] Unknown reconnection token (seen before).
+[16:22:48] [<unknown>][63e29642][ExtensionHostConnection] New connection established.
+[16:22:48] [<unknown>][63e29642][ExtensionHostConnection] <4156079> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[16:27:35] New EH opened, aborting shutdown
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 
+<--- Last few GCs --->
+
+[4156079:0x65535f0]  1128066 ms: Mark-Compact 1950.0 (1999.8) -> 1937.2 (1996.5) MB, 176.04 / 0.00 ms  (average mu = 0.422, current mu = 0.342) allocation failure; scavenge might not succeed
+[4156079:0x65535f0]  1128377 ms: Mark-Compact 1951.5 (2003.1) -> 1941.3 (2014.6) MB, 280.32 / 0.00 ms  (average mu = 0.257, current mu = 0.099) allocation failure; scavenge might not succeed
+
+
+<--- JS stacktrace --->
+
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  1: 0xb8d11b node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  2: 0xf01b70 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  3: 0xf01e57 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  4: 0x1113aa5  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  5: 0x112b928 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  6: 0x1101a41 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  7: 0x1102bd5 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  8: 0x10df2f6 v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr>  9: 0x10d0f24 v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawWithImmortalMap(int, v8::internal::AllocationType, v8::internal::Map, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 10: 0x10d3706 v8::internal::FactoryBase<v8::internal::Factory>::NewRawOneByteString(int, v8::internal::AllocationType) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 11: 0x1244ed5 v8::internal::JsonParser<unsigned short>::MakeString(v8::internal::JsonString const&, v8::internal::Handle<v8::internal::String>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 12: 0x124aeed  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 13: 0x124ce59 v8::internal::JsonParser<unsigned short>::ParseJson(v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 14: 0xf9384e v8::internal::Builtin_JsonParse(int, unsigned long*, v8::internal::Isolate*) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079><stderr> 15: 0x1975df6  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:41:37] [<unknown>][63e29642][ExtensionHostConnection] <4156079> Extension Host Process exited with code: null, signal: SIGABRT.
+Last EH closed, waiting before shutting down
+[16:41:37] Last EH closed, waiting before shutting down
+[16:41:49] [<unknown>][63e29642][ExtensionHostConnection] Unknown reconnection token (seen before).
+[16:41:49] [<unknown>][0090c8d5][ExtensionHostConnection] New connection established.
+[16:41:49] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[16:46:37] New EH opened, aborting shutdown
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 
+<--- Last few GCs --->
+
+[4170538:0x5d9d5f0]   402942 ms: Scavenge (reduce) 1959.7 (2001.1) -> 1959.6 (2002.1) MB, 6.90 / 0.00 ms  (average mu = 0.334, current mu = 0.342) allocation failure; 
+[4170538:0x5d9d5f0]   403043 ms: Scavenge (reduce) 1960.5 (2002.1) -> 1960.6 (2002.1) MB, 10.13 / 0.00 ms  (average mu = 0.334, current mu = 0.342) allocation failure; 
+[4170538:0x5d9d5f0]   403053 ms: Scavenge (reduce) 1960.6 (2002.1) -> 1960.4 (2003.1) MB, 10.23 / 0.00 ms  (average mu = 0.334, current mu = 0.342) allocation failure; 
+
+
+<--- JS stacktrace --->
+
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  1: 0xb8d11b node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  2: 0xf01b70 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  3: 0xf01e57 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  4: 0x1113aa5  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  5: 0x1114034 v8::internal::Heap::RecomputeLimits(v8::internal::GarbageCollector) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  6: 0x112af24 v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::internal::GarbageCollectionReason, char const*) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  7: 0x112b73c v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  8: 0x1101a41 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr>  9: 0x1102bd5 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 10: 0x10df2f6 v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 11: 0x10d0f24 v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawWithImmortalMap(int, v8::internal::AllocationType, v8::internal::Map, v8::internal::AllocationAlignment) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 12: 0x10d4237 v8::internal::FactoryBase<v8::internal::Factory>::NewRawTwoByteString(int, v8::internal::AllocationType) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 13: 0x15926bc v8::internal::IncrementalStringBuilder::Extend() [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 14: 0x1250829 v8::internal::JsonStringifier::SerializeString(v8::internal::Handle<v8::internal::String>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 15: 0x1251ff1 v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<true>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 16: 0x1255f49 v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<false>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 17: 0x12554d7 v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<false>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 18: 0x1256d36 v8::internal::JsonStringify(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 19: 0xf93c72 v8::internal::Builtin_JsonStringify(int, unsigned long*, v8::internal::Isolate*) [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:32] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538><stderr> 20: 0x1975df6  [/root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/node]
+
+[16:48:33] [<unknown>][0090c8d5][ExtensionHostConnection] <4170538> Extension Host Process exited with code: null, signal: SIGABRT.
+Last EH closed, waiting before shutting down
+[16:48:33] Last EH closed, waiting before shutting down
+[16:48:51] [<unknown>][0090c8d5][ExtensionHostConnection] Unknown reconnection token (seen before).
+[16:48:51] [<unknown>][33c5e9e0][ExtensionHostConnection] New connection established.
+[16:48:51] [<unknown>][33c5e9e0][ExtensionHostConnection] <4176133> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[16:53:33] New EH opened, aborting shutdown
+[17:02:10] No ptyHost heartbeat after 6 seconds
+[17:02:10] [<unknown>][33c5e9e0][ExtensionHostConnection] The client has reconnected.
+[17:02:10] [<unknown>][33c5e9e0][ExtensionHostConnection] <4176133> Extension Host Process exited with code: null, signal: SIGKILL.
+Last EH closed, waiting before shutting down
+[17:02:10] Last EH closed, waiting before shutting down
+[17:02:20] [<unknown>][6cc972a9][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:02:59] [<unknown>][dab064c8][ManagementConnection] New connection established.
+[17:02:59] [<unknown>][10553545][ExtensionHostConnection] New connection established.
+[17:02:59] [<unknown>][10553545][ExtensionHostConnection] <4189924> Launched Extension Host Process.
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 19 on pty host
+stack trace: CodeExpectedError: Could not find pty 19 on pty host
+    at $.W (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at $.updateTitle (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at O.s.<computed> (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at rl.s (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at rl.q (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[17:03:02] Error [CodeExpectedError]: Could not find pty 19 on pty host
+    at $.W (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:47:6392)
+    at $.updateTitle (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:47:1839)
+    at O.s.<computed> (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:46:2962)
+    at Object.call (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at rl.s (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81166)
+    at rl.q (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80689)
+    at ps.value (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80091)
+    at x.B (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at x.fire (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.C (file:///root/.vscode-server/cli/servers/Stable-7c6fdfb0b8f2f675eb0b47f3d95eeca78962565b/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29879)
+    at process.emit (node:events:518:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)

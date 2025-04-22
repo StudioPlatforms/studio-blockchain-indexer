@@ -1,0 +1,456 @@
+# Blockchain Indexer Enhancement Master Plan
+
+*Last Updated: March 25, 2025*
+
+This document outlines the comprehensive plan for enhancing the Studio Blockchain Mainnet Indexer. It serves as a living roadmap that will be updated as we progress through the implementation.
+
+## Project Overview
+
+The Studio Blockchain Indexer needs to be enhanced to provide better support for token balances, automatic token detection, and improved analytics. The system should handle approximately 500k transactions per day with full historical data retention.
+
+## Implementation Phases
+
+### Phase 1: Core Indexing & Data Retrieval (Priority)
+
+#### 1.1 Improve Transaction Indexing
+- [x] Add token balances table for ERC20 tokens
+- [x] Add native token balances in accounts table
+- [ ] Enhance transaction receipt data (status, logs, gas used)
+- [ ] Improve transaction indexing performance
+- [ ] Add transaction status tracking
+
+#### 1.2 Event Logs Indexing
+- [ ] Create `event_logs` table with topic indexing
+- [ ] Implement filtering by contract address and event signature
+- [ ] Add endpoints for querying logs by transaction or contract
+
+#### 1.3 Block Data Enhancement
+- [ ] Add additional block metrics (gas metrics, miner rewards)
+- [ ] Implement block analytics (average gas price, transaction count)
+- [ ] Create `/blocks/{blockNumberOrHash}` endpoint
+- [ ] Create `/transactions/{txHash}` endpoint with detailed info
+
+### Phase 2: Automatic Token Detection (Priority)
+
+#### 2.1 Contract Creation Detection
+- [ ] Enhance transaction processor to identify contract creation transactions
+- [ ] Create `contracts` table to store contract metadata
+- [ ] Implement contract creation tracking system
+- [ ] Add API endpoints for contract information
+
+#### 2.2 Token Verification Process
+- [ ] Create background service for token verification
+- [ ] Implement ERC165 interface detection
+- [ ] Add ERC20/ERC721/ERC1155 detection logic
+- [ ] Create `token_metadata` table to store token information
+
+#### 2.3 Transfer Event Monitoring
+- [ ] Register event listeners for token transfer events
+- [ ] Process historical transfers for newly detected tokens
+- [ ] Update token balances for each transfer
+- [ ] Implement batch processing for high-volume tokens
+
+#### 2.4 Real-time Updates & Backfilling
+- [ ] Implement real-time token detection
+- [ ] Create background job for historical transfer backfilling
+- [ ] Add progress tracking for backfill operations
+- [ ] Update token metadata after backfill completion
+
+### Phase 3: NFT Support
+
+#### 3.1 NFT Indexing
+- [ ] Enhance ERC-721 and ERC-1155 support
+- [ ] Add metadata storage and retrieval
+- [ ] Implement collection grouping and statistics
+- [ ] Create NFT transfer history endpoints
+
+#### 3.2 NFT Metadata
+- [ ] Implement metadata fetching from token URIs
+- [ ] Add caching for NFT metadata
+- [ ] Create endpoints for NFT metadata retrieval
+- [ ] Add support for NFT collections
+
+### Phase 4: Analytics & Search
+
+#### 4.1 Universal Search System
+- [ ] Implement multi-entity search (tx, address, block, token)
+- [ ] Add fuzzy matching for token names and contract labels
+- [ ] Create advanced filtering options
+
+#### 4.2 Analytics Engine
+- [ ] Implement time-series data for key metrics
+- [ ] Add address activity analysis
+- [ ] Create token market data aggregation
+- [ ] Build dashboard API endpoints
+
+### Phase 5: Resilience & Performance
+
+#### 5.1 Chain Reorganization Handling
+- [ ] Implement reorg detection and recovery
+- [ ] Add transaction confirmation tracking
+- [ ] Create finality indicators
+
+#### 5.2 Performance Optimizations
+- [ ] Implement database partitioning for large tables
+- [ ] Add caching layer for frequent queries
+- [ ] Create read replicas for analytics queries
+- [ ] Implement batch processing for indexing
+
+## Database Schema Changes
+
+### New Tables
+
+#### `token_balances` (Implemented)
+```sql
+CREATE TABLE IF NOT EXISTS token_balances (
+    id SERIAL PRIMARY KEY,
+    address VARCHAR(42) NOT NULL,
+    token_address VARCHAR(42) NOT NULL,
+    balance NUMERIC(78) NOT NULL DEFAULT 0,
+    token_type VARCHAR(10) NOT NULL, -- 'ERC20', 'ERC721', or 'ERC1155'
+    last_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(address, token_address)
+);
+```
+
+#### `contracts` (Planned)
+```sql
+CREATE TABLE contracts (
+  address VARCHAR(42) PRIMARY KEY,
+  creator_address VARCHAR(42) NOT NULL,
+  creation_tx_hash VARCHAR(66) NOT NULL,
+  block_number BIGINT NOT NULL,
+  timestamp TIMESTAMP NOT NULL,
+  bytecode TEXT NOT NULL,
+  is_token BOOLEAN,
+  token_type VARCHAR(10),
+  verified BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+#### `token_metadata` (Planned)
+```sql
+CREATE TABLE token_metadata (
+  token_address VARCHAR(42) PRIMARY KEY,
+  name TEXT,
+  symbol TEXT,
+  decimals INTEGER,
+  total_supply NUMERIC(78),
+  token_type VARCHAR(10) NOT NULL,
+  holder_count INTEGER DEFAULT 0,
+  transfer_count INTEGER DEFAULT 0,
+  last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+#### `event_logs` (Planned)
+```sql
+CREATE TABLE event_logs (
+  id SERIAL PRIMARY KEY,
+  transaction_hash VARCHAR(66) NOT NULL,
+  block_number BIGINT NOT NULL,
+  log_index INTEGER NOT NULL,
+  address VARCHAR(42) NOT NULL,
+  topic0 VARCHAR(66),
+  topic1 VARCHAR(66),
+  topic2 VARCHAR(66),
+  topic3 VARCHAR(66),
+  data TEXT,
+  timestamp TIMESTAMP NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE(transaction_hash, log_index)
+);
+```
+
+### Table Modifications
+
+#### `accounts` (Implemented)
+```sql
+ALTER TABLE accounts ADD COLUMN IF NOT EXISTS balance NUMERIC(78) NOT NULL DEFAULT 0;
+```
+
+## API Endpoint Specifications
+
+### Token Endpoints
+
+#### GET /account/{address}/balances
+- Returns native balance and token balances for an address
+- Response format:
+```json
+{
+  "native": 1.234567,
+  "tokens": [
+    {
+      "contractAddress": "0xFcCC20bf4f0829e121bC99FF2222456Ad4465A1E",
+      "symbol": "USDT",
+      "name": "Tether USD",
+      "balance": 1250.75,
+      "decimals": 18,
+      "type": "ERC20"
+    }
+  ]
+}
+```
+
+#### GET /address/{address}/tokens
+- Returns token balances for an address
+- Response format: Array of token objects
+
+#### GET /address/{address}/token-transfers
+- Returns token transfers for an address
+- Query parameters: limit, offset
+- Response format: Array of transfer objects
+
+#### GET /tokens/{tokenAddress}
+- Returns token information
+- Response format:
+```json
+{
+  "address": "0xFcCC20bf4f0829e121bC99FF2222456Ad4465A1E",
+  "symbol": "USDT",
+  "name": "Tether USD",
+  "decimals": 18,
+  "totalSupply": "1000000000000000000000000000",
+  "type": "ERC20",
+  "holders": 12345,
+  "transfers": 67890
+}
+```
+
+#### GET /tokens/{tokenAddress}/holders
+- Returns token holders sorted by balance
+- Query parameters: limit, offset
+- Response format: Array of holder objects
+
+#### GET /tokens/{tokenAddress}/transfers
+- Returns token transfers
+- Query parameters: limit, offset
+- Response format: Array of transfer objects
+
+### Block & Transaction Endpoints (Planned)
+
+#### GET /blocks/{blockNumberOrHash}
+- Returns block information
+- Response format: Block object
+
+#### GET /transactions/{txHash}
+- Returns transaction information
+- Response format: Transaction object
+
+### Contract Endpoints (Planned)
+
+#### GET /contracts/{address}
+- Returns contract information
+- Response format: Contract object
+
+#### GET /contracts/tokens
+- Returns list of token contracts
+- Query parameters: limit, offset, type
+- Response format: Array of token contract objects
+
+### Event Log Endpoints (Planned)
+
+#### GET /logs
+- Returns event logs
+- Query parameters: address, topic0, fromBlock, toBlock, limit, offset
+- Response format: Array of log objects
+
+#### GET /transactions/{txHash}/logs
+- Returns logs for a transaction
+- Response format: Array of log objects
+
+## Automatic Token Detection System Design
+
+### Contract Detection Logic
+
+```typescript
+async function processTransaction(tx: Transaction): Promise<void> {
+  // Check if this is a contract creation
+  if (!tx.to && tx.input.length > 2) {
+    const receipt = await getTransactionReceipt(tx.hash);
+    if (receipt && receipt.contractAddress) {
+      // Store contract info
+      await storeContractInfo(receipt.contractAddress, tx);
+      
+      // Queue for token verification
+      await tokenVerificationQueue.add({
+        contractAddress: receipt.contractAddress,
+        creationTxHash: tx.hash,
+        blockNumber: tx.blockNumber
+      });
+    }
+  }
+}
+```
+
+### Token Verification Service
+
+```typescript
+async function verifyTokenContract(contractAddress: string): Promise<void> {
+  let isToken = false;
+  let tokenType = null;
+  let metadata = {};
+  
+  // Try ERC165 interface detection first
+  try {
+    const supportsERC165 = await callContractMethod(
+      contractAddress,
+      ['function supportsInterface(bytes4) view returns (bool)'],
+      'supportsInterface',
+      ['0x01ffc9a7']
+    );
+    
+    if (supportsERC165) {
+      // Check for ERC721
+      const isERC721 = await callContractMethod(
+        contractAddress,
+        ['function supportsInterface(bytes4) view returns (bool)'],
+        'supportsInterface',
+        ['0x80ac58cd']
+      );
+      
+      if (isERC721) {
+        isToken = true;
+        tokenType = 'ERC721';
+        metadata = await getERC721Metadata(contractAddress);
+      } else {
+        // Check for ERC1155
+        const isERC1155 = await callContractMethod(
+          contractAddress,
+          ['function supportsInterface(bytes4) view returns (bool)'],
+          'supportsInterface',
+          ['0xd9b67a26']
+        );
+        
+        if (isERC1155) {
+          isToken = true;
+          tokenType = 'ERC1155';
+          metadata = await getERC1155Metadata(contractAddress);
+        }
+      }
+    }
+  } catch (error) {
+    // ERC165 check failed, try ERC20
+    try {
+      const [name, symbol, decimals, totalSupply] = await Promise.all([
+        callContractMethod(contractAddress, ['function name() view returns (string)'], 'name', []),
+        callContractMethod(contractAddress, ['function symbol() view returns (string)'], 'symbol', []),
+        callContractMethod(contractAddress, ['function decimals() view returns (uint8)'], 'decimals', []),
+        callContractMethod(contractAddress, ['function totalSupply() view returns (uint256)'], 'totalSupply', [])
+      ]);
+      
+      if (name && symbol) {
+        isToken = true;
+        tokenType = 'ERC20';
+        metadata = { name, symbol, decimals: decimals || 18, totalSupply: totalSupply.toString() };
+      }
+    } catch (error) {
+      // Not an ERC20 token
+    }
+  }
+  
+  // Update contract record
+  await updateContractTokenStatus(contractAddress, isToken, tokenType);
+  
+  // If it's a token, store metadata and start tracking
+  if (isToken && tokenType) {
+    await storeTokenMetadata(contractAddress, tokenType, metadata);
+    await startTrackingTokenTransfers(contractAddress, tokenType);
+  }
+}
+```
+
+### Historical Transfer Backfilling
+
+```typescript
+async function backfillTokenTransfers(tokenAddress: string, tokenType: string): Promise<void> {
+  // Get contract creation block
+  const contract = await getContractInfo(tokenAddress);
+  const fromBlock = contract.blockNumber;
+  const toBlock = await getCurrentBlockNumber();
+  
+  // Define event signature based on token type
+  let eventSignature;
+  if (tokenType === 'ERC20' || tokenType === 'ERC721') {
+    eventSignature = 'Transfer(address,address,uint256)';
+  } else if (tokenType === 'ERC1155') {
+    // Process both event types for ERC1155
+    await processERC1155Events(tokenAddress, fromBlock, toBlock);
+    return;
+  }
+  
+  // Get all historical events in batches
+  const batchSize = 2000; // Adjust based on RPC provider limits
+  for (let i = fromBlock; i <= toBlock; i += batchSize) {
+    const endBlock = Math.min(i + batchSize - 1, toBlock);
+    const events = await getEvents(tokenAddress, eventSignature, i, endBlock);
+    
+    // Process events in batches
+    await processTransferEvents(events, tokenType);
+    
+    // Update progress
+    await updateBackfillProgress(tokenAddress, endBlock);
+  }
+  
+  // Update token metadata after backfill
+  await updateTokenMetadata(tokenAddress);
+}
+```
+
+## Timeline Estimates
+
+### Phase 1: Core Indexing & Data Retrieval
+- Transaction Indexing Improvements: 1 week
+- Event Logs Indexing: 1 week
+- Block Data Enhancement: 3-4 days
+- Total: ~2.5 weeks
+
+### Phase 2: Automatic Token Detection
+- Contract Creation Detection: 2-3 days
+- Token Verification Process: 3-4 days
+- Transfer Event Monitoring: 4-5 days
+- Real-time Updates & Backfilling: 3-4 days
+- Total: ~2-3 weeks
+
+### Phase 3: NFT Support
+- NFT Indexing: 1 week
+- NFT Metadata: 1 week
+- Total: ~2 weeks
+
+### Phase 4: Analytics & Search
+- Universal Search System: 1 week
+- Analytics Engine: 1-2 weeks
+- Total: ~2-3 weeks
+
+### Phase 5: Resilience & Performance
+- Chain Reorganization Handling: 1 week
+- Performance Optimizations: 1-2 weeks
+- Total: ~2-3 weeks
+
+**Total Project Timeline: ~10-13 weeks**
+
+## Progress Tracking
+
+### Completed Tasks
+- [x] Add token balances table for ERC20 tokens
+- [x] Add native token balances in accounts table
+- [x] Implement token holders endpoint with sorting by balance
+- [x] Add token transfers and holders count tracking
+- [x] Create migration scripts for database schema
+- [x] Implement database triggers for token balances
+- [x] Update API to use database for token balances
+
+### In Progress
+- [ ] Improve transaction indexing with better status tracking
+- [ ] Add event logs indexing with topic filtering
+- [ ] Enhance block data with more metrics
+- [ ] Implement automatic token detection
+
+### Next Steps
+1. Implement event logs indexing
+2. Create contract detection system
+3. Develop token verification service
+4. Enhance block data with additional metrics

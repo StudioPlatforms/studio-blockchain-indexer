@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: studio_indexer
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  db-healthcheck:
+    build:
+      context: .
+      dockerfile: scripts/Dockerfile.healthcheck
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=studio_indexer
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - MIGRATIONS_DIR=/app/migrations
+      - LOG_FILE=/app/logs/db-healthcheck.log
+    volumes:
+      - healthcheck_logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /app/logs/db-healthcheck.log && grep -q 'Database health check completed successfully' /app/logs/db-healthcheck.log"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  indexer:
+    build: .
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=studio_indexer
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - RPC_URL=https://mainnet.studio-blockchain.com,https://mainnet2.studio-blockchain.com,https://mainnet3.studio-blockchain.com,https://mainnet.studio-scan.com,https://mainnet2.studio-scan.com
+      - CHAIN_ID=240241
+      - PORT=3000
+      - HOST=0.0.0.0
+      - START_BLOCK=0
+      - BATCH_SIZE=10
+      - CONFIRMATIONS=5
+    ports:
+      - "3000:3000"
+    volumes:
+      - indexer_logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      db-healthcheck:
+        condition: service_healthy
+    restart: unless-stopped
+    command: >
+      sh -c "
+        echo 'Starting indexer...' &&
+        npm start
+      "
+
+volumes:
+  postgres_data:
+  indexer_logs:
+  healthcheck_logs:
+
+networks:
+  default:
+    name: studio_indexer_network
