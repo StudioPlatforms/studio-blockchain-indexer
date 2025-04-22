@@ -497,3 +497,5 @@ You can implement webhooks and notifications by subscribing to specific events o
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+Contact: office@studio-blockchain.com
+Lead developer: laurent@studio-blockchain.com
