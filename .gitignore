@@ -53,6 +53,7 @@ dist/
 
 # IDE files
 .vscode/
+.vscode-server/
 .idea/
 *.swp
 *.swo
