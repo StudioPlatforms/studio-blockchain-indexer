@@ -1,1 +1,0 @@
-{"private":true,"dependencies":{"types-registry":"^0.1.716"},"devDependencies":{"@types/brace-expansion":"^1.1.2","@types/cors":"^2.8.17","@types/express":"^5.0.1","@types/inflight":"^1.0.1","@types/inherits":"^2.0.0","@types/node-fetch":"^2.6.12","@types/once":"^1.4.5","@types/pg":"^8.11.12","@types/seedrandom":"^3.0.8"}}
