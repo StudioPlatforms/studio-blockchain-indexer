@@ -1,5 +1,0 @@
-SHELL=/bin/sh
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-
-# Run database backup every 6 hours
-0 */6 * * * root /root/mainnet-indexer/scripts/backup-database.sh >> /var/log/indexer-backup.log 2>&1
